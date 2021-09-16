@@ -1,0 +1,18 @@
+extends layouts/main
+
+block content
+
+    .container-fluid.mt-2
+        div(style="width: 25rem;")
+            form(action="/customers/add" method="POST")
+                div.mb-3
+                    label.form-label(for="name") Фамилия, Имя, Отчество
+                    input.form-control(type="text" id="name" name="name")
+                    div.form-text(id="name-help") Заполняется любыми даннми, будь то хоть ссылка на VK.
+
+                div.mb-3
+                    label.form-label(for="street") Адрес
+                    input.form-control(type="text" id="street" name="street")
+                    div.form-text(id="street-help") Заполните адрес если вам будет необходима эта информация (выезд/доставка).
+
+                button.btn.btn-primary(type="submit") Сохранить
