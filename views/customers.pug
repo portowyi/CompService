@@ -1,7 +1,7 @@
 extends layouts/main
 
 block content
-    .container-fluid
+    .container-fluid.mt-3
         if customers.length > 0
             table.table.table-success.table-striped
                 thead
@@ -14,8 +14,8 @@ block content
                     each customer in customers
                         tr(scope="row")
                             td #{customer.id}
-                            td #{customer.name}
+                            td #{customer.firstName + " " + customer.lastName + " " + customer.patronymic}
                             td #{customer.street}
-                            td ...
+                            td #{customer.comment}
         else
             h2  У вас еще нет ни одного клиента

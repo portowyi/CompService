@@ -1,9 +1,13 @@
 const customers = [];
 
 module.exports = class Customer{
-    constructor(name, addr) {
-        this.name = name;
-        this.street = addr;
+
+    constructor(firstName, lastName, patronymic, street, comment) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.street = street;
+        this.comment = comment;
         this.id = null;
     }
 

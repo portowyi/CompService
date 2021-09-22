@@ -1,11 +1,16 @@
 const Customer = require('../model/customer');
+const {log} = require("nodemon/lib/utils");
 
 exports.getAddCustomer = (req, res) => {
     res.render('add-customer');
 };
 
 exports.postAddCustomer = (req, res) => {
-    const customer = new Customer(req.body.name, req.body.street);
+    console.log(req.body);
+    if (req.body.firstName === "" && req.body.lastName === "" && req.body.patronymic === "") {
+
+    }
+    const customer = new Customer(req.body.firstName, req.body.lastName, req.body.patronymic, req.body.street, req.body.comment);
     customer.save();
     res.redirect('/customers');
 };
