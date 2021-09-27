@@ -4,7 +4,7 @@ const path = require('path');
 const router = express.Router();
 
 router.use((req, res) => {
-    res.render('404');
+    res.render('404', {pageTitle: "Страница не найдена"});
 });
 
 module.exports = router;

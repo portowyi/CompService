@@ -10,11 +10,11 @@ exports.postAddCustomer = (req, res) => {
     if (req.body.firstName === "" && req.body.lastName === "" && req.body.patronymic === "") {
 
     }
-    const customer = new Customer(req.body.firstName, req.body.lastName, req.body.patronymic, req.body.street, req.body.comment);
+    const customer = new Customer(req.body);
     customer.save();
     res.redirect('/customers');
 };
 
 exports.getCustomers = (req, res) => {
-    res.render('customers', {'customers' : Customer.fetchAll()});
+    //res.render('customers', {'customers' : Customer.fetchAll()});
 };
