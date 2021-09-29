@@ -8,7 +8,36 @@
     <%- include('./includes/navbar.ejs') %>
 </header>
 <main>
-    Список всех клиентов
+    <div class="container-fluid mt-3">
+        <% if (customers.length > 0) { %>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Фамилия</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Отчество</th>
+                        <th scope="col">Адрес</th>
+                        <th scope="col">Комментарий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (const customer of customers) { %>
+                        <tr scope="row">
+                            <td> <%= customer.id %> </td>
+                            <td> <%= customer.lastName %> </td>
+                            <td> <%= customer.firstName %> </td>
+                            <td> <%= customer.patronymic %> </td>
+                            <td> <%= customer.street %> </td>
+                            <td> <%= customer.comment %> </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <h1>Упс, Клиенты не найдены</h1>
+        <% } %>
+    </div>
 </main>
 </body>
 </html>

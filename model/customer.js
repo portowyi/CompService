@@ -1,34 +1,28 @@
-const customers = [];
+const { DataTypes } = require('sequelize');
+const sequelize = require('../util/database');
 
-module.exports = class Customer{
+const Customer = sequelize.define('Customer', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    firstName: {
+        type: DataTypes.STRING
+    },
+    lastName: {
+        type: DataTypes.STRING
+    },
+    patronymic: {
+        type: DataTypes.STRING
+    },
+    street: {
+        type: DataTypes.STRING
+    },
+    comment: {
+        type: DataTypes.STRING
+    },
+});
 
-    constructor({firstName, lastName, patronymic, street, comment}) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-        this.street = street;
-        this.comment = comment;
-        this.id = null;
-    }
-
-    save(){
-        if (this.id === null){
-            this.id = customers.length;
-        }
-        customers.push(this);
-    }
-
-    static fetchAll(){
-        return customers;
-    }
-}
-
-// CREATE TABLE `comp_crm_test`.`customers` (
-//     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-//     `first_name` VARCHAR(45) NULL,
-//     `second_name` VARCHAR(45) NULL,
-//     `patronymic` VARCHAR(45) NULL,
-//     `street` VARCHAR(255) NULL,
-//     `comment` VARCHAR(255) NULL,
-//     PRIMARY KEY (`id`),
-//     UNIQUE INDEX `id_UNIQUE` (`id` ASC));
+module.exports = Customer;
