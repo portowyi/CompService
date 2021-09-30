@@ -19,6 +19,7 @@
                         <th scope="col">Отчество</th>
                         <th scope="col">Адрес</th>
                         <th scope="col">Комментарий</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,11 @@
                             <td> <%= customer.patronymic %> </td>
                             <td> <%= customer.street %> </td>
                             <td> <%= customer.comment %> </td>
+                            <td>
+                                <form action="/customers/<%= customer.id %> " method="пуе">
+                                    <button class="btn btn-primary" type="submit">Изменить</button>
+                                </form>
+                            </td>
                         </tr>
                     <% } %>
                 </tbody>

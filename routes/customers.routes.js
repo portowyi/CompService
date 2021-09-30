@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/add', customersController.getAddCustomer);
 router.post('/add', customersController.postAddCustomer);
-
+router.get('/:customerId', customersController.getEditCustomer);
 router.get('/', customersController.getCustomers);
 
 module.exports = router;

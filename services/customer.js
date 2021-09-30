@@ -4,7 +4,10 @@ const { Op } = require("sequelize");
 class CustomerService {
 
     async addCustomer(customerFields){
-        return Customer.create(customerFields);
+       //if(customerFields.id){
+       //     return Customer.update(customerFields);
+       // }
+        return Customer.upsert(customerFields);
     };
 
     findAll(queryParams){
@@ -42,6 +45,13 @@ class CustomerService {
             });
         }
         return Customer.findAll();
+    }
+
+    findById(id){
+        if(typeof id === "undefined"){
+            return null;
+        }
+        return Customer.findByPk(id);
     }
 
 }
