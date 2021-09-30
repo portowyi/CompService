@@ -1,6 +1,7 @@
 const Customer = require('../model/customer');
 const { Op } = require("sequelize");
 
+//test
 class CustomerService {
 
     async addCustomer(customerFields){
