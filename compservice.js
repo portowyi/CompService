@@ -26,7 +26,7 @@ sequelize.sync().then(result => {
     });
 }).catch(err => {
     console.log(err);
-})
+});
 
 
 
