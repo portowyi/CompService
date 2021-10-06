@@ -1,4 +1,5 @@
-.idea
-node_modules
-js
-css
+backend/.idea
+backend/node_modules
+backend/js
+backend/css
+frontend/node_modules
