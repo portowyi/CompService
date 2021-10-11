@@ -1,8 +1,8 @@
-const Customer = require('../model/customer');
+const Customer = require('./customer');
 const { Op } = require("sequelize");
 
 //test
-class CustomerService {
+class CustomersService {
 
     async addCustomer(customerFields){
        //if(customerFields.id){
@@ -57,4 +57,4 @@ class CustomerService {
 
 }
 
-module.exports = new CustomerService();
+module.exports = new CustomersService();

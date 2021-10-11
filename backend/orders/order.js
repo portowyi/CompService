@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../util/database');
 
-const Customer = require('../model/customer');
+const Customer = require('../customers/customer');
 
 const Order = sequelize.define('order', {
     id: {

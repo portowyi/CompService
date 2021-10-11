@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const customerRoutes = require('./customers.routes');
-const indexRoutes = require('./index.routes');
-const pageNotFoundRoutes = require('./404.routes');
+const customerRoutes = require('../customers/customersRoutes');
 
-router.use('/customers', customerRoutes);
-router.use('/index',     indexRoutes);
-router.use(pageNotFoundRoutes);
+router.use('/api/v1/customers', customerRoutes);
 
 module.exports = router;

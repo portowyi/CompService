@@ -4,8 +4,8 @@ const path = require("path");
 const sequelize = require('./util/database');
 
 const routes = require('./routes/index');
-const CustomerCls = require("./model/customer");
-const customerController = require('./services/customer');
+const CustomerCls = require("./customers/customer");
+const customerController = require('./customers/customersService');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
