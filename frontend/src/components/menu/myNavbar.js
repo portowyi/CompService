@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from 'react-bootstrap/Navbar';
-import {Button, Container, Form, FormControl, Nav} from "react-bootstrap";
+import { Button, Container, Form, FormControl, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 export default function MyNavbar(){
     return(
@@ -8,11 +9,11 @@ export default function MyNavbar(){
             <Container>
                 <Navbar.Brand href="#">Сервис</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#1">Клиенты</Nav.Link>
-                    <Nav.Link href="#2">Товары</Nav.Link>
-                    <Nav.Link href="#3">Заказы</Nav.Link>
-                    <Nav.Link href="#4">Продажи</Nav.Link>
-                    <Nav.Link href="#5">Остатки</Nav.Link>
+                    <Nav.Link as={NavLink} to="/customers">Клиенты</Nav.Link>
+                    <Nav.Link as={NavLink} to="/goods">Товары</Nav.Link>
+                    <Nav.Link as={NavLink} to="/orders">Заказы</Nav.Link>
+                    <Nav.Link as={NavLink} to="/sales">Продажи</Nav.Link>
+                    <Nav.Link as={NavLink} to="/balance">Остатки</Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                     <FormControl
