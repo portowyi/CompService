@@ -5,8 +5,8 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 
-@Entity(name = "WORK_ORDERS")
+@Entity(name = "PRODUCTS")
 @ToString
 @NoArgsConstructor
-public class WorkOrder extends BaseEntity{
+public class Product extends BaseEntity{
 }
