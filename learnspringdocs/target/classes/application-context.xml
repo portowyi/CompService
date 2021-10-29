@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="ru.portowyi.components.AMDProcessor" id="amdProcessor">
+    </bean>
+
+    <bean class="ru.portowyi.components.HomeComputer" id="homeComputer">
+        <constructor-arg ref="amdProcessor" />
+        <property name="memory" value="32000" />
+        <property name="cores" value="10" />
+    </bean>
+
+</beans>

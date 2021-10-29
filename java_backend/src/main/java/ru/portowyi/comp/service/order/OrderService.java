@@ -1,8 +1,6 @@
-package ru.portowyi.comp.service.service;
+package ru.portowyi.comp.service.order;
 
 import org.springframework.stereotype.Service;
-import ru.portowyi.comp.service.domain.Order;
-import ru.portowyi.comp.service.repository.OrderRepository;
 
 @Service
 public class OrderService {

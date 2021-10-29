@@ -1,8 +1,6 @@
-package ru.portowyi.comp.service.service;
+package ru.portowyi.comp.service.workorder;
 
 import org.springframework.stereotype.Service;
-import ru.portowyi.comp.service.domain.WorkOrder;
-import ru.portowyi.comp.service.repository.WorkOrderRepository;
 
 @Service
 public class WorkOrderService {

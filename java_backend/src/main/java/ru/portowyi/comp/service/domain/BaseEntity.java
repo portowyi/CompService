@@ -15,20 +15,17 @@ import java.util.Date;
 public abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    private Long id;
+    @Getter private Long id;
 
-    @Column(name = "CREATED_AT")
-    @CreationTimestamp
-    @Getter
-    @Setter
+    @Column(name = "CREATED_AT", updatable = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date created;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Getter @Setter private Date created;
 
     @Column(name = "UPDATED_AT")
-    @UpdateTimestamp
-    @Getter
-    @Setter
     @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
-    private Date updated;
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Getter @Setter private Date updated;
 }
