@@ -30,7 +30,7 @@ public class Customer extends BaseEntity {
 
     @Column(name = "SECOND_NAME", nullable = false)
     @Size(min = 3, message = "Фамилия не может быть короче двух символов!")
-    @JsonProperty("surname")
+    @JsonProperty("surName")
     @Getter
     @Setter
     private String secondName;
